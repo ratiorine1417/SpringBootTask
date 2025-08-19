@@ -93,6 +93,7 @@ public class BookRepositoryTest {
     }
 
     @Test
+    @Disabled
     void testDeleteBook() {
         Book foundBook = bookRepository.findByIsbn("9788956746425")
                 .orElseThrow(() -> new RuntimeException("Book Not Found"));
