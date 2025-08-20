@@ -69,22 +69,22 @@ public class BookRestController {
         return ResponseEntity.ok(updatedBook);
     }
     //도서 삭제
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteBook(@PathVariable Long id) {
-        Book existBook = getExistBook(id);
-        bookRepository.delete(existBook);
-        return ResponseEntity.ok("Book이 삭제되었습니다.");
-    }
-    // 도서 삭제
 //    @DeleteMapping("/{id}")
-//    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
-//        //매칭돠는 Book 이 없으면
-//        if (!bookRepository.existsById(id)) {
-//            return ResponseEntity.notFound().build(); //404
-//        }
-//        bookRepository.deleteById(id);
-//        return ResponseEntity.noContent().build(); //204
+//    public ResponseEntity<?> deleteBook(@PathVariable Long id) {
+//        Book existBook = getExistBook(id);
+//        bookRepository.delete(existBook);
+//        return ResponseEntity.ok("Book이 삭제되었습니다.");
 //    }
+    // 도서 삭제
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
+        //매칭돠는 Book 이 없으면
+        if (!bookRepository.existsById(id)) {
+            return ResponseEntity.notFound().build(); //404
+        }
+        bookRepository.deleteById(id);
+        return ResponseEntity.noContent().build(); //204
+    }
 
     private Book getExistBook(Long id) {
         Optional<Book> optionalBook = bookRepository.findById(id);
