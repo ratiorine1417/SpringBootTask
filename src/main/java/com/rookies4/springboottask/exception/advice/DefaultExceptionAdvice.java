@@ -14,7 +14,7 @@ import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
-@RestControllerAdvice
+//@RestControllerAdvice
 @Slf4j
 public class DefaultExceptionAdvice {
 

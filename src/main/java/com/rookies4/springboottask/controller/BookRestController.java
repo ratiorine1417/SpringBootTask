@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/books")
+//@RequestMapping("/api/books")
 public class BookRestController {
     private final BookRepository bookRepository;
     //새 도서 등록
