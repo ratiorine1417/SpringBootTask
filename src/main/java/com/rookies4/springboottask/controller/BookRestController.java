@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/books")
+//@RequestMapping("/api/books")
 public class BookRestController {
     private final BookRepository bookRepository;
     //새 도서 등록
@@ -49,7 +49,7 @@ public class BookRestController {
     // 저자명으로 도서 조회
     @GetMapping("/author/{author}")
     public List<Book> getBooksByAuthor(@PathVariable String author) {
-        return bookRepository.findByAuthor(author);
+        return bookRepository.findByAuthorContainingIgnoreCase(author);
     }
     //도서 정보 수정
 //    @PutMapping("/{id}")
