@@ -110,12 +110,6 @@ public class BookService {
 
             if (bookDetail == null) {
                 bookDetail = new BookDetail();
-                bookDetail.setDescription(request.getDetailRequest().getDescription());
-                bookDetail.setLanguage(request.getDetailRequest().getLanguage());
-                bookDetail.setPageCount(request.getDetailRequest().getPageCount());
-                bookDetail.setPublisher(request.getDetailRequest().getPublisher());
-                bookDetail.setCoverImageUrl(request.getDetailRequest().getCoverImageUrl());
-                bookDetail.setEdition(request.getDetailRequest().getEdition());
                 bookDetail.setBook(book);
                 book.setBookDetail(bookDetail);
             }
