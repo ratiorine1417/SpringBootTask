@@ -14,22 +14,22 @@ public class BookDetail {
     @Column(name = "book_detail_id")
     private Long id;
 
-    @Column
+    @Column(columnDefinition = "TEXT")
     private String description;
 
-    @Column(nullable = false)
+    @Column(name = "language")
     private String language;
 
-    @Column(nullable = false)
+    @Column(name = "page_count")
     private Integer pageCount;
 
-    @Column(nullable = false)
+    @Column(name = "publisher")
     private String publisher;
 
-    @Column(unique = true)
+    @Column(name = "cover_image_url")
     private String coverImageUrl;
 
-    @Column
+    @Column(name = "edition")
     private String edition;
 
     @OneToOne(fetch = FetchType.LAZY)

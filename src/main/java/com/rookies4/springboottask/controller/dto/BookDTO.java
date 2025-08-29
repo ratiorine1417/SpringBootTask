@@ -41,6 +41,19 @@ public class BookDTO {
         @Valid
         private BookDetailDTO detailRequest;
     }
+    
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Builder
+    public static class BookDetailDTO {
+        private String description;
+        private String language;
+        private Integer pageCount;
+        private String publisher;
+        private String coverImageUrl;
+        private String edition;
+    }
 
     @Data
     @NoArgsConstructor
@@ -55,19 +68,6 @@ public class BookDTO {
         private Optional<LocalDate> publishDate;
 
         private Optional<BookDetailPatchRequest> detailRequest;
-    }
-    
-    @Data
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Builder
-    public static class BookDetailDTO {
-        private String description;
-        private String language;
-        private Integer pageCount;
-        private String publisher;
-        private String coverImageUrl;
-        private String edition;
     }
 
     @Data

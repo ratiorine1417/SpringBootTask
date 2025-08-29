@@ -89,21 +89,27 @@ public class BookService {
             throw new BusinessException(ErrorCode.ISBN_DUPLICATE, request.getIsbn());
         }
 
-        if (request.getTitle() != null) {
-            book.setTitle(request.getTitle());
-        }
-        if (request.getAuthor() != null) {
-            book.setAuthor(request.getAuthor());
-        }
-        if (request.getIsbn() != null) {
-            book.setIsbn(request.getIsbn());
-        }
-        if (request.getPrice() != null) {
-            book.setPrice(request.getPrice());
-        }
-        if (request.getPublishDate() != null) {
-            book.setPublishDate(request.getPublishDate());
-        }
+        book.setTitle(request.getTitle());
+        book.setAuthor(request.getAuthor());
+        book.setIsbn(request.getIsbn());
+        book.setPrice(request.getPrice());
+        book.setPublishDate(request.getPublishDate());
+
+//        if (request.getTitle() != null) {
+//            book.setTitle(request.getTitle());
+//        }
+//        if (request.getAuthor() != null) {
+//            book.setAuthor(request.getAuthor());
+//        }
+//        if (request.getIsbn() != null) {
+//            book.setIsbn(request.getIsbn());
+//        }
+//        if (request.getPrice() != null) {
+//            book.setPrice(request.getPrice());
+//        }
+//        if (request.getPublishDate() != null) {
+//            book.setPublishDate(request.getPublishDate());
+//        }
 
         if (request.getDetailRequest() != null) {
             BookDetail bookDetail = book.getBookDetail();
@@ -114,24 +120,31 @@ public class BookService {
                 book.setBookDetail(bookDetail);
             }
 
-            if (request.getDetailRequest().getDescription() != null) {
-                bookDetail.setDescription(request.getDetailRequest().getDescription());
-            }
-            if (request.getDetailRequest().getLanguage() != null) {
-                bookDetail.setLanguage(request.getDetailRequest().getLanguage());
-            }
-            if (request.getDetailRequest().getPageCount() != null) {
-                bookDetail.setPageCount(request.getDetailRequest().getPageCount());
-            }
-            if (request.getDetailRequest().getPublisher() != null) {
-                bookDetail.setPublisher(request.getDetailRequest().getPublisher());
-            }
-            if (request.getDetailRequest().getCoverImageUrl() != null) {
-                bookDetail.setCoverImageUrl(request.getDetailRequest().getCoverImageUrl());
-            }
-            if (request.getDetailRequest().getEdition() != null) {
-                bookDetail.setEdition(request.getDetailRequest().getEdition());
-            }
+            bookDetail.setDescription(request.getDetailRequest().getDescription());
+            bookDetail.setLanguage(request.getDetailRequest().getLanguage());
+            bookDetail.setPageCount(request.getDetailRequest().getPageCount());
+            bookDetail.setPublisher(request.getDetailRequest().getPublisher());
+            bookDetail.setCoverImageUrl(request.getDetailRequest().getCoverImageUrl());
+            bookDetail.setEdition(request.getDetailRequest().getEdition());
+
+//            if (request.getDetailRequest().getDescription() != null) {
+//                bookDetail.setDescription(request.getDetailRequest().getDescription());
+//            }
+//            if (request.getDetailRequest().getLanguage() != null) {
+//                bookDetail.setLanguage(request.getDetailRequest().getLanguage());
+//            }
+//            if (request.getDetailRequest().getPageCount() != null) {
+//                bookDetail.setPageCount(request.getDetailRequest().getPageCount());
+//            }
+//            if (request.getDetailRequest().getPublisher() != null) {
+//                bookDetail.setPublisher(request.getDetailRequest().getPublisher());
+//            }
+//            if (request.getDetailRequest().getCoverImageUrl() != null) {
+//                bookDetail.setCoverImageUrl(request.getDetailRequest().getCoverImageUrl());
+//            }
+//            if (request.getDetailRequest().getEdition() != null) {
+//                bookDetail.setEdition(request.getDetailRequest().getEdition());
+//            }
         }
 
         Book updatedBook = bookRepository.save(book);
